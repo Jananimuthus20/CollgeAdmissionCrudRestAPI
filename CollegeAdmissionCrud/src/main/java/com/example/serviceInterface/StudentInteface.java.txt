@@ -1,0 +1,20 @@
+package com.example.demo.serviceinterface;
+
+import java.util.List;
+
+import com.example.demo.model.Student;
+
+public interface StudentInterface {
+	//To save new student
+	public Student savestudent(Student student);
+	
+	//To update Student
+	public Student updateStudent(Student student);
+	
+	//To fetch all student from database
+	public List<Student>findAllStudents();
+	
+	//To delete student
+	public void deleteStudent(int id);
+
+}

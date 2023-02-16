@@ -1,0 +1,47 @@
+package com.example.demo.serviceimplementation;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.dao.StudentRepository;
+import com.example.demo.model.Student;
+import com.example.demo.serviceinterface.StudentInterface;
+
+@Service
+public class StudentServiceImpl implements StudentInterface{
+	@Autowired
+	private StudentRepository studentRepo;
+	@Override
+	public Student savestudent(Student student) {
+		// TODO Auto-generated method stub
+		return studentRepo.save(student);
+	}
+
+	@Override
+	public Student updateStudent(Student student) {
+		// TODO Auto-generated method stub
+		return studentRepo.save(student);
+	}
+
+	@Override
+	public List<Student> findAllStudents() {
+		// It returns a list
+		return (List<Student>) studentRepo.findAll();
+	}
+
+	@Override
+	public void deleteStudent(int id) {
+		// TO delete student
+		studentRepo.deleteById(id);
+		
+	}
+
+	
+	
+
+}
